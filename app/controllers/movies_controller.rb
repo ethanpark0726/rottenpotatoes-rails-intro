@@ -12,7 +12,7 @@ class MoviesController < ApplicationController
 
   def index
     @category = params[:category]
-    @movies = Movie.all.order(params[:sort_by])
+    @movies = Movie.all
     @all_ratings = Movie.all_ratings
     @ratings = params[:ratings]
     if !@ratings
