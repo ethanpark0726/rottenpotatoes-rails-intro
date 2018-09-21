@@ -26,7 +26,7 @@ class MoviesController < ApplicationController
     elsif @ratings
       @movies = Movie.where(:rating => @ratings.keys)
     elsif @category
-      @movies = Movie.all.order(@category)
+      @movies = Movie.order(@category)
     else
       @movies = Movie.all
     end
