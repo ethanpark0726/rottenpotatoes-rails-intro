@@ -44,8 +44,11 @@ class MoviesController < ApplicationController
       @all_ratings.each do |rating|
          @ratings[rating] = 1
        end
-#    elsif !@ratings
-#      @ratings = Hash.new
+    elsif !@ratings and params[:commit] == "Refresh"
+      @ratings = Hash.new
+      @all_ratings.each do |rating|
+         @ratings[rating] = 1
+      end
     end
     
     if @category and @ratings
