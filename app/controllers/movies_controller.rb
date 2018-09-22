@@ -35,6 +35,10 @@ class MoviesController < ApplicationController
       flash.keep
     end
 
+    if !@ratings and params[:commit] == "Refresh"
+        @all_ratings.each do |rating|
+          @ratings[rating] = 1
+    end
 #    if !@ratings and params[:commit] != "Refresh"
 #      @ratings = Hash.new
 #      @all_ratings.each do |rating|
