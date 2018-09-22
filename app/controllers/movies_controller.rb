@@ -35,10 +35,10 @@ class MoviesController < ApplicationController
       @category = nil
     end
 
-#    if redirect
-#      flash.keep
-#      redirect_to movies_path :category => @category, :ratings => @ratings
-#    end
+    if (redirect == true)
+      flash.keep
+      redirect_to movies_path :category => @category, :ratings => @ratings
+    end
 
     if !@ratings and params[:commit] != "Refresh"
       @ratings = Hash.new
