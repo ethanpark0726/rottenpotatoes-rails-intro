@@ -19,7 +19,7 @@ class MoviesController < ApplicationController
       #@ratings = params[:ratings]
       session[:ratings] = params[:ratings]
     else
-      redirect = 1
+      redirect = true
       @ratings = session[:ratings]
     end
     
@@ -27,11 +27,11 @@ class MoviesController < ApplicationController
       #@category = params[:category]
       session[:category] = params[:category]
     else
-      redirect = 1
+      redirect = true
       @category = session[:category]
     end
 
-    if redirect == 1
+    if redirect == true
       flash.keep
       redirect_to movies_path({:category => @category, :ratings => @ratings})
     end
