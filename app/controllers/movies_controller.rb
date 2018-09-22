@@ -45,9 +45,6 @@ class MoviesController < ApplicationController
       @all_ratings.each do |rating|
          @ratings[rating] = 1
        end
-    elsif !@ratings
-      @ratings = Hash.new
-      redirect = false
     end
     
     if @category and @ratings
