@@ -16,7 +16,7 @@ class MoviesController < ApplicationController
     redirect = false
     
     if params[:ratings]
-      @ratings = params[:ratings]
+      #@ratings = params[:ratings]
       session[:ratings] = params[:ratings]
     else
       redirect = 1
@@ -24,7 +24,7 @@ class MoviesController < ApplicationController
     end
     
     if params[:category]
-      @category = params[:category]
+      #@category = params[:category]
       session[:category] = params[:category]
     else
       redirect = 1
