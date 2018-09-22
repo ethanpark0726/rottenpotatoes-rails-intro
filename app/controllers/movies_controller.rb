@@ -36,7 +36,7 @@ class MoviesController < ApplicationController
     end
 
     if (redirect == true)
-      flash.keep
+#      flash.keep
       redirect_to movies_path :category => @category, :ratings => @ratings
     end
 
