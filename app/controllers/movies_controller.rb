@@ -37,7 +37,7 @@ class MoviesController < ApplicationController
 
     if !@ratings and params[:commit] == "Refresh"
         @all_ratings.each do |rating|
-          @ratings[rating] = 1
+          @ratings[rating] = 0
     end
 #    if !@ratings and params[:commit] != "Refresh"
 #      @ratings = Hash.new
