@@ -21,8 +21,6 @@ class MoviesController < ApplicationController
     elsif
       redirect = true
       @ratings = session[:ratings]
-    else
-      @ratings = nil
     end
     
     if params[:category]
@@ -31,11 +29,9 @@ class MoviesController < ApplicationController
     elsif
       redirect = true
       @category = session[:category]
-    else
-      @category = nil
     end
 
-    if redirect == true
+    if redirect
       flash.keep
     end
 
@@ -44,11 +40,6 @@ class MoviesController < ApplicationController
       @all_ratings.each do |rating|
          @ratings[rating] = 1
        end
-    elsif !@ratings and params[:commit] == "Refresh"
-      @ratings = Hash.new
-      @all_ratings.each do |rating|
-         @ratings[rating] = 1
-      end
     end
     
     if @category and @ratings
