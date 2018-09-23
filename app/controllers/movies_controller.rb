@@ -31,6 +31,7 @@ class MoviesController < ApplicationController
       @category = session[:category]
     end
 
+    # Persist all flash value
     if redirect
       flash.keep
     end
